@@ -1,7 +1,7 @@
 import requests
 
 
-def test_valid_post_prescription(fixture_client, fixture_prescription_factory):
+def test_valid_post_prescription(fixture_prescription_factory):
     data_prescription = fixture_prescription_factory()
     headers = {
         "Content-Type": "application/json",
