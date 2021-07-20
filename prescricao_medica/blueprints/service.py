@@ -3,15 +3,20 @@ from requests import exceptions
 
 from model import Prescription
 from prescricao_medica.blueprints.errors import ERROR_007
-from prescricao_medica.blueprints.restapi.resources import get_physician, post_metric
+from prescricao_medica.blueprints.restapi.resources import (
+    get_physician,
+    post_metric,
+    get_clinic,
+    get_patient,
+)
 
 
 def build_prescription(data):
     """Consult dependents services,create item and send metric"""
     try:
         g.physician = get_physician(data["physician"]["id"])
-        g.clinic = get_physician(data["clinic"]["id"])
-        g.patient = get_physician(data["physician"]["id"])
+        g.clinic = get_clinic(data["clinic"]["id"])
+        g.patient = get_patient(data["physician"]["id"])
 
         g.prescription = Prescription(
             clinic=int(g.clinic["id"]),
