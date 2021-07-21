@@ -1,6 +1,6 @@
 import pytest
 
-from app import create_app
+from prescription import create_app
 
 app = create_app()
 

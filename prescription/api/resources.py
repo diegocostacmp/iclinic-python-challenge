@@ -6,7 +6,11 @@ from config import (
     TOKEN_METRICS,
     TOKEN_CLINICS,
 )
-from prescricao_medica.blueprints.errors import ERROR_005, ERROR_006, ERROR_004
+from prescription.api.errors import (
+    ERROR_005,
+    ERROR_006,
+    ERROR_004,
+)
 
 
 def get_physician(physician_id: int):

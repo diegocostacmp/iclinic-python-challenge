@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  web:
+    build: .
+    volumes:
+     - .:/api
+    links:
+      - mongodb
+    environment:
+      PORT: 5000
+    ports:
+      - 5000:5000
+  mongodb:
+    image: mongo:latest
+    volumes:
+      - mongo-data:/data/db
+      - mongo-configdb:/data/configdb
+    ports:
+      - 27017:27017
+volumes:
+  mongo-data:
+  mongo-configdb:

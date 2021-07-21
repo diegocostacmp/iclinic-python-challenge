@@ -1,13 +1,13 @@
 from flask import g
 from requests import exceptions
 
-from model import Prescription
-from prescricao_medica.blueprints.errors import ERROR_007
-from prescricao_medica.blueprints.restapi.resources import (
+from prescription.api.errors import ERROR_007
+from prescription.api.model import Prescription
+from prescription.api.resources import (
     get_physician,
-    post_metric,
     get_clinic,
     get_patient,
+    post_metric,
 )
 
 

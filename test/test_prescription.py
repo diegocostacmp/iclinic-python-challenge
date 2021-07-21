@@ -8,8 +8,9 @@ def test_valid_post_prescription(fixture_prescription_factory):
     }
 
     res = requests.post(
-        "http://localhost:5000/prescriptions",
+        "http://127.0.0.1:5000/api/prescriptions",
         json=data_prescription,
         headers=headers,
     )
+    assert len(res.json()) == 6
     assert res.status_code == 200
